@@ -22,5 +22,17 @@ public class Producto {
     public int getId() {
         return id;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 

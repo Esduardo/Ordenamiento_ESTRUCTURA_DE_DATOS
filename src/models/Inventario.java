@@ -22,8 +22,8 @@ public class Inventario {
                 System.out.print("stock: ");
                 stock = entrada.nextInt();
             }while(stock < 1000 || stock >9999);
-            System.out.printf("id: " + (id + 1) + "\n");
-            id = id + 1;
+            System.out.printf("id:  " + i + "\n");
+            id = id + i;
             objetoProducto = new Producto(nom, stock, id);
             arregloA [i - 1] = objetoProducto;
         }
