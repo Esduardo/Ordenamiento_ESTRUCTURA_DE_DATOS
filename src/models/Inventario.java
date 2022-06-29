@@ -10,34 +10,31 @@ public class Inventario {
     static Producto objetoProducto;
     static  Producto [] arregloA;
     static Scanner entrada =  new Scanner(System.in);
-    public static void registrar(){
+    public static void registrar() {
+        Scanner entrada= new Scanner(System.in);
+        int cantidad, stock, id = 0;
         String nom;
-        int cantidadPro,  y = 0, stock, id = 0;
-        System.out.println("::                    REGISTRO              ::");
-        System.out.println("::     cantidad fija (5 elementos)          ::");
-
-        for (int i = 0; i < 5; i++) {
-            arregloA =  new Producto[5];
+        arregloA = new Producto[5];
+        for (int i = 1; i <= 5; i++) {
             System.out.print("Nombre: ");
             nom = entrada.next();
-            System.out.print("stock: ");
-            stock = entrada.nextInt();
-            objetoProducto = new Producto(id, nom, stock);
-            arregloA [i] = objetoProducto;
+            do {
+                System.out.print("stock: ");
+                stock = entrada.nextInt();
+            }while(stock < 1000 || stock >9999);
+            System.out.printf("id: " + (id + 1) + "\n");
+            id = id + 1;
+            objetoProducto = new Producto(nom, stock, id);
+            arregloA [i - 1] = objetoProducto;
         }
-        for(int i = 0; i < 5; i++){
-            System.out.println(arregloA[i].getid());
-            System.out.println(arregloA[i].getnombre());
-            System.out.println(arregloA[i].getstock());
-        }
+
 
     }
-
     public static void ordenar(){
         Producto aux;
         for(int i = 0; i < 5 - 1; i++){
             for(int j = 0; j < 5 - 1; j++){
-                if(arregloA[j].getstock() > arregloA[j+1].getstock()){
+                if(arregloA[j].getStock() > arregloA[j+1].getStock()){
                     aux = arregloA[j];
                     arregloA[j] = arregloA[j + 1];
                     arregloA[j+1] = aux;
@@ -49,9 +46,9 @@ public class Inventario {
     public static void visualizar(){
         System.out.println("      Visualizacion de productos      ");
         for(int i = 0; i < 5; i++){
-            System.out.printf("\nID      : " + arregloA[i].getid());
-            System.out.printf("\nProducto: " + arregloA[i].getnombre());
-            System.out.printf("\nStock   : " + arregloA[i].getstock());
+            System.out.printf("\nProducto      : " + arregloA[i].getNombre());
+            System.out.printf("\nstock: " + arregloA[i].getStock());
+            System.out.printf("\nID   : " + arregloA[i].getId());
         }
     }
 }

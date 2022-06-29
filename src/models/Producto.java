@@ -1,37 +1,26 @@
 package models;
 
 public class Producto {
-    private static int id;
-    private static String nombre;
-    private static int stock;
+    String nombre;
+    int stock;
+    int id;
 
-    public  Producto(int id, String nombre, int stock){
-        this.id = id;
-        this.nombre = nombre;
-        this.stock = stock;
+    public Producto(String nombreA, int matriculaA, int id){
+        this.nombre = nombreA   ;
+        this.stock = matriculaA;
+        this.id = this.id;
     }
 
-    public  int getid() {
-        return id;
-    }
-
-    public String getnombre() {
+    public String getNombre (){
         return nombre;
     }
 
-    public int getstock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setId(int id) {
-        Producto.id = id;
-    }
-
-    public  void setNombre(String nombre) {
-        Producto.nombre = nombre;
-    }
-
-    public  void setStock(int stock) {
-        Producto.stock = stock;
+    public int getId() {
+        return id;
     }
 }
+
